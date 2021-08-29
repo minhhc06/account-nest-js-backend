@@ -6,7 +6,7 @@ import { Jobs } from './jobs.enity';
 @EntityRepository(Jobs)
 export class JobsRepository extends Repository<Jobs> {
     async getTasks(): Promise<Jobs[]> {
-        const query = this.createQueryBuilder('jobs');
+        const query = this.createQueryBuilder('jobs').select("jobs");
 
         try {
             const tasks = await query.getMany();

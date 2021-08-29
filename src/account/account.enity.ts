@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn, PrimaryColumn } from 'typeorm'
 // import { NewsStatus } from './news-status.enum'
 
 @Entity()
-export class AccountNest {
+export class Account {
     @PrimaryColumn()
     id: string;
 

@@ -1,11 +1,11 @@
 import { InternalServerErrorException } from '@nestjs/common';
 import { EntityRepository, Repository } from 'typeorm';
-import { AccountNest } from './account.enity';
+import { Account } from './account.enity';
 import { AccountDto } from './dto/account.dto';
 
-@EntityRepository(AccountNest)
-export class AccountRepository extends Repository<AccountNest> {
-    async getTasks(): Promise<AccountNest[]> {
+@EntityRepository(Account)
+export class AccountRepository extends Repository<Account> {
+    async getTasks(): Promise<Account[]> {
         const query = this.createQueryBuilder('account');
 
         try {
@@ -20,7 +20,7 @@ export class AccountRepository extends Repository<AccountNest> {
 
     }
 
-    async createTask(accountDto: AccountDto) : Promise<AccountNest>{
+    async createTask(accountDto: AccountDto) : Promise<Account>{
         const { title, description , content , id} = accountDto;
     
         const account = this.create({

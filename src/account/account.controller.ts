@@ -1,5 +1,5 @@
 import {Body, Controller, Get, Post} from '@nestjs/common'
-import { AccountNest } from './account.enity';
+import { Account } from './account.enity';
 import { AccountService } from './account.service';
 import { AccountDto } from './dto/account.dto';
 
@@ -8,12 +8,12 @@ export class AccountController{
     constructor(private accountServce: AccountService){
     }
     @Get()
-    getAccountTest() : Promise<AccountNest[]>{
+    getAccountTest() : Promise<Account[]>{
         return this.accountServce.getTasks();
     }
 
     @Post()
-    createTask(@Body() accountsDto: AccountDto) : Promise<AccountNest>{
+    createTask(@Body() accountsDto: AccountDto) : Promise<Account>{
       return this.accountServce.createTask(accountsDto);
     }
 

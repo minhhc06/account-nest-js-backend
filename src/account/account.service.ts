@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { AccountNest } from "./account.enity";
+import { Account } from "./account.enity";
 import { AccountRepository } from "./account.repository";
 import { AccountDto } from "./dto/account.dto";
 import { InjectRepository } from '@nestjs/typeorm';
@@ -12,11 +12,11 @@ export class AccountService{
         private accountRepository: AccountRepository,
     ){}
 
-    getTasks(): Promise<AccountNest[]>{
+    getTasks(): Promise<Account[]>{
         return this.accountRepository.getTasks();
     }
 
-    createTask(createTaskDto: AccountDto) : Promise<AccountNest> {
+    createTask(createTaskDto: AccountDto) : Promise<Account> {
         return this.accountRepository.createTask(createTaskDto);
     
     }
