@@ -7,9 +7,14 @@ import { AccountDto } from './dto/account.dto';
 export class AccountController{
     constructor(private accountServce: AccountService){
     }
+    // @Get()
+    // getAccountTest() : Promise<Account[]>{
+    //     return this.accountServce.getTasks();
+    // }
+
     @Get()
-    getAccountTest() : Promise<Account[]>{
-        return this.accountServce.getTasks();
+    getAccountTest(){
+        console.log('vo day ne');
     }
 
     @Post()
